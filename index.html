@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<HTML>
+<html>
     <head>
         <title>My Cool Website</title>
         <style>
@@ -7,12 +7,38 @@
                 width: 600px;
                 height: auto;
             }
-
+            h1 {
+                color: red;
+            }
         </style>
     </head>
     <body>
         <h1>My Cool Website</h1>
-        <p>i think HTML is neat!</p>
-        <img src="https://www.inboundlogistics.com/wp-content/uploads/dump-trucks.jpg">
+        <p>I think HTML is neat!</p>
+        <!-- Replaced with a valid image URL -->
+        <img src="https://via.placeholder.com/600x400" alt="Placeholder Image">
+        
+        <blockquote>From the kids on the neighborhood</blockquote>
+
+        <button onclick="changeQuote()">Change Quote</button>
+
+        <script>
+            var index = 0;
+
+            function changeQuote() {
+                var quotes = [
+                    `"I really like web development!" - Yousef A`,
+                    `"Hi!" - Yousef`
+                ];
+                // Fixed method name
+                var blockquote = document.querySelector("blockquote");
+                blockquote.innerHTML = quotes[index];
+                index++;
+                // Prevent overflow using quotes.length
+                if (index >= quotes.length) {
+                    index = 0;   
+                }
+            }
+        </script>
     </body>
-</HTML>
+</html>
